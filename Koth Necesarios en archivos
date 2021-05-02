@@ -1,1 +1,21 @@
+    
+    EN PLAYER.PHP:
+    
+    }
 
+    /**
+     * @return Int
+     */
+    public function getKothHostTimeRemaining() : Int {
+        return PlayerBase::getData($this->getName())->get("koth_host");
+    }
+
+    /**
+     * @return void
+     */
+    public function resetKothHostTime() : void {
+        PlayerBase::setData($this->getName(), "koth_host", $this->getRank() === "Angelic" ? time() + (2 * 3600) : time() + (3 * 3600));
+    }
+    
+    
+    EN :
